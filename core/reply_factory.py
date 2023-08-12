@@ -35,7 +35,10 @@ def record_current_answer(answer, current_question_id, session):
     if current_question_id == None: 
         session["answers"] = []
     else:
-        session["answers"].append({"question_id" : current_question_id , "answer":answer})
+        if answer !=None or len(answer) != 0:
+            session["answers"].append({"question_id" : current_question_id , "answer":answer})
+        else:
+            False, "You have answered wrong"
     return True, ""
 
 
