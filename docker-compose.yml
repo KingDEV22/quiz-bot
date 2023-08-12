@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: Dockerfile
 
-    entrypoint: "/app/run_server.sh"
+    entrypoint: "/app/run.sh"
     ports:
       - "80:8000"
     env_file:

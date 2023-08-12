@@ -13,4 +13,4 @@ RUN pip install --upgrade pip
 
 COPY . $DockerHOME
 RUN pip install -r requirements.txt
-RUN chmod +x run_server.sh
+RUN chmod +x run.sh
