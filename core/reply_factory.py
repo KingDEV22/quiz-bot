@@ -35,10 +35,12 @@ def record_current_answer(answer, current_question_id, session):
     if current_question_id == None: 
         session["answers"] = []
     else:
-        if answer !=None or len(answer) != 0:
+        options = PYTHON_QUESTION_LIST[current_question_id]["options"]
+        if answer in options:
             session["answers"].append({"question_id" : current_question_id , "answer":answer})
         else:
-            False, "You have answered wrong"
+            return False, "You have answered wrong"
+        
     return True, ""
 
 
